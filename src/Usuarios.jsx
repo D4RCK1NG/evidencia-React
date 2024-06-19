@@ -15,7 +15,7 @@ function Usurios({recargar}) {
   }
 
   async function eliminarUsuario(id) {
-    const peticion = await fetch("http://localhost:3000/usuarios?id=" + id, {credentials: 'include', method: 'DELETE'})
+    const peticion = await fetch(import.meta.env.VITE_HOSTBACKEND+"/usuarios?id=" + id, {credentials: 'include', method: 'DELETE'})
     if (peticion.ok){
       alert('Usuario Eliminado')
       obtenerUsuarios();

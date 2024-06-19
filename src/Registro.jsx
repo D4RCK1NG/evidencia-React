@@ -13,7 +13,7 @@ function Registro({recargarAhora}) {
     setRegistroContraseña(evento.target.value);
   }
   async function registrar() { 
-    const peticion = await fetch(" http://localhost:3000/registro?usuario=" + registroUsuario + '&clave=' + registroContraseña,{ credentials: 'include'});
+    const peticion = await fetch(import.meta.env.VITE_HOSTBACKEND+"/registro?usuario=" + registroUsuario + '&clave=' + registroContraseña,{ credentials: 'include'});
     if (peticion.ok){
       alert("Usuario Registrado")
       recargarAhora()
