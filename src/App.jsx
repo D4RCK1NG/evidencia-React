@@ -21,7 +21,7 @@ function App() {
     setRecargar (!recargar)
   }
   async function validacion() {
-    const peticion = await fetch(import.meta.env.VITE_HOSTBACKEND+" /Login?usuario=" + usuario + '&clave=' + contraseña,{ credentials: 'include'});
+    const peticion = await fetch(import.meta.env.VITE_HOSTBACKEND+"/Login?usuario=" + usuario + '&clave=' + contraseña,{ credentials: 'include'});
     if (peticion.ok){
       setLogueado(true);
       //obtenerUsuarios();
